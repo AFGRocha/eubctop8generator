@@ -189,7 +189,7 @@ export default {
         "Pikachu",
         "Piranha Plant",
         "Pit",
-        "Pokemon Trainer",
+        "Pokémon Trainer",
         "Richter",
         "Ridley",
         "R.O.B.",
@@ -237,7 +237,7 @@ export default {
   methods: {
     async createImg() {
       console.log(this.second);
-      axios.post("http://localhost:3000/users", {
+      axios.post("http://localhost:3000/images", {
         second:{
             country: this.second.country,
             team: this.second.team,

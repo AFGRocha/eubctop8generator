@@ -3,7 +3,7 @@ const Buffer = require('buffer').Buffer;
 const path = require('path');
 const fs = require('fs');
 
-async function register(req, res) {
+async function top8(req, res) {
     //console.log(this.second);
     Canvas.registerFont('./assets/BebasNeue Bold_0.ttf', { family: 'Bebas' })
     Canvas.registerFont('./assets/Gobold Bold Italic.otf', { family: 'Gobold' })
@@ -28,7 +28,7 @@ async function register(req, res) {
     else {
         ctx.font = '35px "Gobold"'
         ctx.fillStyle = "#FFFFFF";
-        ctx.fillText("Daiki", 177, 446);
+        ctx.fillText(req.body.second.name, 177, 446);
     }
     ctx.shadowOffsetX = 0
     ctx.shadowOffsetY = 0
@@ -82,4 +82,4 @@ async function register(req, res) {
 }
 
 
-module.exports = { register }
+module.exports = { top8 }
