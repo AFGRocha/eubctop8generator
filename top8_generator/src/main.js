@@ -3,11 +3,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Canvas from 'canvas'
-//import fs from 'browserify-fs'
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
-
-Vue.use(Buefy)
 
 Vue.config.productionTip = false
 

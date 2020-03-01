@@ -54,6 +54,237 @@ async function top8(req, res) {
 
 
 
+    //Third place
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 3;
+    ctx.shadowColor = "rgba(0,0,0,0.3)";
+    if (req.body.third.team != "") {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#f8cf24";
+        ctx.fillText(req.body.third.team, 177, 505);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.third.name, ctx.measureText(req.body.third.team).width + 183, 505);
+    }
+    else {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.third.name, 177, 505);
+    }
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    //stock icons
+    const stock3rd = await Canvas.loadImage(`./assets/stocks/${req.body.third.char1}.png`);
+    ctx.drawImage(stock3rd, 590, 465, 40, 42);
+    if (req.body.third.char2 != "") {
+        const stock3rd2 = await Canvas.loadImage(`./assets/stocks/${req.body.third.char2}.png`);
+        ctx.drawImage(stock3rd2, 547, 465, 40, 42);
+    }
+    if (req.body.third.char3 != "") {
+        const stock3rd3 = await Canvas.loadImage(`./assets/stocks/${req.body.third.char3}.png`);
+        ctx.drawImage(stock3rd3, 504, 465, 40, 42);
+    }
+    if (req.body.third.char4 != "") {
+        const stock3rd4 = await Canvas.loadImage(`./assets/stocks/${req.body.third.char4}.png`);
+        ctx.drawImage(stock3rd4, 461, 465, 40, 42);;
+    }
+
+    //flag
+    const flag3rd = await Canvas.loadImage(`./assets/flags/${req.body.third.country}.png`);
+    ctx.drawImage(flag3rd, 104, 463);
+
+    //Fourth place
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 3;
+    ctx.shadowColor = "rgba(0,0,0,0.3)";
+    if (req.body.fourth.team != "") {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#f8cf24";
+        ctx.fillText(req.body.fourth.team, 177, 562);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.fourth.name, ctx.measureText(req.body.fourth.team).width + 183, 562);
+    }
+    else {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.fourth.name, 177, 562);
+    }
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    //stock icons
+    const stock4th = await Canvas.loadImage(`./assets/stocks/${req.body.fourth.char1}.png`);
+    ctx.drawImage(stock4th, 590, 522, 40, 42);
+    if (req.body.fourth.char2 != "") {
+        const stock4th2 = await Canvas.loadImage(`./assets/stocks/${req.body.fourth.char2}.png`);
+        ctx.drawImage(stock4th2, 547, 522, 40, 42);
+    }
+    if (req.body.fourth.char3 != "") {
+        const stock4th3 = await Canvas.loadImage(`./assets/stocks/${req.body.fourth.char3}.png`);
+        ctx.drawImage(stock4th3, 504, 522, 40, 42);
+    }
+    if (req.body.fourth.char4 != "") {
+        const stock4th4 = await Canvas.loadImage(`./assets/stocks/${req.body.fourth.char4}.png`);
+        ctx.drawImage(stock4th4, 461, 522, 40, 42);;
+    }
+
+    //flag
+    const flag4th = await Canvas.loadImage(`./assets/flags/${req.body.fourth.country}.png`);
+    ctx.drawImage(flag4th, 104, 520);
+
+
+    //Fifth place
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 3;
+    ctx.shadowColor = "rgba(0,0,0,0.3)";
+    if (req.body.fifth.team != "") {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#f8cf24";
+        ctx.fillText(req.body.fifth.team, 177, 619);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.fifth.name, ctx.measureText(req.body.fifth.team).width + 183, 619);
+    }
+    else {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.fifth.name, 177, 619);
+    }
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    //stock icons
+    const stock5th = await Canvas.loadImage(`./assets/stocks/${req.body.fifth.char1}.png`);
+    ctx.drawImage(stock5th, 590, 579, 40, 42);
+    if (req.body.fifth.char2 != "") {
+        const stock5th2 = await Canvas.loadImage(`./assets/stocks/${req.body.fifth.char2}.png`);
+        ctx.drawImage(stock5th2, 547, 579, 40, 42);
+    }
+    if (req.body.fifth.char3 != "") {
+        const stock5th3 = await Canvas.loadImage(`./assets/stocks/${req.body.fifth.char3}.png`);
+        ctx.drawImage(stock5th3, 504, 579, 40, 42);
+    }
+    if (req.body.fifth.char4 != "") {
+        const stock5th4 = await Canvas.loadImage(`./assets/stocks/${req.body.fifth.char4}.png`);
+        ctx.drawImage(stock5th4, 461, 579, 40, 42);
+    }
+
+    //flag
+    const flag5th = await Canvas.loadImage(`./assets/flags/${req.body.fifth.country}.png`);
+    ctx.drawImage(flag5th, 104, 577);
+
+    //Fifth place 2
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 3;
+    ctx.shadowColor = "rgba(0,0,0,0.3)";
+    if (req.body.fifth.team != "") {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#f8cf24";
+        ctx.fillText(req.body.fifth2.team, 177, 676);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.fifth2.name, ctx.measureText(req.body.fifth2.team).width + 183, 676);
+    }
+    else {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.fifth2.name, 177, 676);
+    }
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    //stock icons
+    const stock5th21 = await Canvas.loadImage(`./assets/stocks/${req.body.fifth2.char1}.png`);
+    ctx.drawImage(stock5th21, 590, 636, 40, 42);
+    if (req.body.fifth2.char2 != "") {
+        const stock5th22 = await Canvas.loadImage(`./assets/stocks/${req.body.fifth2.char2}.png`);
+        ctx.drawImage(stock5th22, 547, 636, 40, 42);
+    }
+    if (req.body.fifth2.char3 != "") {
+        const stock5th23 = await Canvas.loadImage(`./assets/stocks/${req.body.fifth2.char3}.png`);
+        ctx.drawImage(stock5th23, 504, 636, 40, 42);
+    }
+    if (req.body.fifth2.char4 != "") {
+        const stock5th24 = await Canvas.loadImage(`./assets/stocks/${req.body.fifth2.char4}.png`);
+        ctx.drawImage(stock5th24, 461, 636, 40, 42);;
+    }
+
+    //flag
+    const flag5th2 = await Canvas.loadImage(`./assets/flags/${req.body.fifth2.country}.png`);
+    ctx.drawImage(flag5th2, 104, 634);
+
+
+    //Seventh place -----------------------------------------------------------------------------------------------------------------
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 3;
+    ctx.shadowColor = "rgba(0,0,0,0.3)";
+    if (req.body.seventh.team != "") {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#f8cf24";
+        ctx.fillText(req.body.seventh.team, 177, 733);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.seventh.name, ctx.measureText(req.body.seventh.team).width + 183, 733);
+    }
+    else {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.seventh.name, 177, 619);
+    }
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    //stock icons
+    const stock7th = await Canvas.loadImage(`./assets/stocks/${req.body.seventh.char1}.png`);
+    ctx.drawImage(stock7th, 590, 693, 40, 42);
+    if (req.body.seventh.char2 != "") {
+        const stock7th2 = await Canvas.loadImage(`./assets/stocks/${req.body.seventh.char2}.png`);
+        ctx.drawImage(stock7th2, 547, 693, 40, 42);
+    }
+    if (req.body.seventh.char3 != "") {
+        const stock7th3 = await Canvas.loadImage(`./assets/stocks/${req.body.seventh.char3}.png`);
+        ctx.drawImage(stock7th3, 504, 693, 40, 42);
+    }
+    if (req.body.seventh.char4 != "") {
+        const stock7th4 = await Canvas.loadImage(`./assets/stocks/${req.body.seventh.char4}.png`);
+        ctx.drawImage(stock7th4, 461, 693, 40, 42);;
+    }
+
+    //flag
+    const flag7th = await Canvas.loadImage(`./assets/flags/${req.body.seventh.country}.png`);
+    ctx.drawImage(flag7th, 104, 691);
+
+
+    //Seventh place 2 -----------------------------------------------------------------------------------------------------------------
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 3;
+    ctx.shadowColor = "rgba(0,0,0,0.3)";
+    if (req.body.seventh2.team != "") {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#f8cf24";
+        ctx.fillText(req.body.seventh2.team, 177, 790);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.seventh2.name, ctx.measureText(req.body.seventh2.team).width + 183, 790);
+    }
+    else {
+        ctx.font = '35px "Gobold"'
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillText(req.body.seventh2.name, 177, 790);
+    }
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    //stock icons
+    const stock7th21 = await Canvas.loadImage(`./assets/stocks/${req.body.seventh2.char1}.png`);
+    ctx.drawImage(stock7th21, 590, 750, 40, 42);
+    if (req.body.seventh2.char2 != "") {
+        const stock7th22 = await Canvas.loadImage(`./assets/stocks/${req.body.seventh2.char2}.png`);
+        ctx.drawImage(stock7th22, 547, 750, 40, 42);
+    }
+    if (req.body.seventh2.char3 != "") {
+        const stock7th23 = await Canvas.loadImage(`./assets/stocks/${req.body.seventh2.char3}.png`);
+        ctx.drawImage(stock7th23, 504, 750, 40, 42);
+    }
+    if (req.body.seventh2.char4 != "") {
+        const stock7th24 = await Canvas.loadImage(`./assets/stocks/${req.body.seventh2.char4}.png`);
+        ctx.drawImage(stock7th24, 461, 750, 40, 42);;
+    }
+
+    //flag
+    const flag7th2 = await Canvas.loadImage(`./assets/flags/${req.body.seventh2.country}.png`);
+    ctx.drawImage(flag7th2, 104, 748);
+
     //Labels
     ctx.font = '21px "Bebas"'
     ctx.fillStyle = "#FFFFFF";

@@ -1,64 +1,366 @@
 <template>
-  <div class="margin">
-<b-field grouped>
+  <div class="container">
+    <h1>EUBC Top 8 Generator</h1>
+<form>
+ <div class="form-row">
+
+   <!-- second place -->
     <p class="placing">2nd</p>
-       <b-field label="Country">
-            <b-select v-model="second.country">
-                 <option v-for="country in countries" :key="country">{{country}}</option>
-            </b-select>
-          </b-field>
-        <b-field label="Team">
-            <b-input v-model="second.team"></b-input>
-        </b-field>
-        <b-field label="Player">
-            <b-input v-model="second.name"></b-input>
-        </b-field>
-        <b-field label="Character 1">
-            <b-select v-model="second.chars.char1">
-             <option></option>
-             <option v-for="character in characters" :key="character">{{character}}</option>
-            </b-select>
-          </b-field>
-           <b-field label="Character 2">
-            <b-select v-model="second.chars.char2">
-              <option></option>
-              <option v-for="character in characters" :key="character">{{character}}</option>
-            </b-select>
-          </b-field>
-           <b-field label="Character 3">
-            <b-select v-model="second.chars.char3">
-              <option></option>
-             <option v-for="character in characters" :key="character">{{character}}</option>
-            </b-select>
-          </b-field>
-           <b-field label="Character 4">
-            <b-select v-model="second.chars.char4">
-              <option></option>
-                <option v-for="character in characters" :key="character">{{character}}</option>
-            </b-select>
-          </b-field>
-    </b-field>
-<b-field grouped>
-       <p class="placing">Labels</p>
-        <b-field label="Date">
-            <b-input v-model="labels.date"></b-input>
-        </b-field>
-        <b-field label="Entrants">
-            <b-input v-model="labels.entrants"></b-input>
-        </b-field>
-         <b-field label="Tournament">
-            <b-input v-model="labels.tourney"></b-input>
-        </b-field>
-    </b-field>
-
-<center> <button class="button is-primary" @click="createImg">Create</button></center>
-
+      <div class="form-group col-md-1">
+      <label>Country</label>
+    <select v-model="second.country" class="form-control" id="exampleFormControlSelect1">
+      <option v-for="country in countries" :key="country">{{country}}</option>
+    </select>
+    </div>
+   <div class="form-group col-md-1">
+      <label>Team</label>
+      <input v-model="second.team" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Player</label>
+      <input  v-model="second.name" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 1</label>
+    <select v-model="second.chars.char1" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 2</label>
+    <select v-model="second.chars.char2" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 3</label>
+    <select v-model="second.chars.char3" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 4</label>
+    <select v-model="second.chars.char4" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
   </div>
+
+     <!-- Third place -->
+ <div class="form-row">
+      <p class="placing">3rd</p>
+      <div class="form-group col-md-1">
+      <label>Country</label>
+    <select v-model="third.country" class="form-control" id="exampleFormControlSelect1">
+      <option v-for="country in countries" :key="country">{{country}}</option>
+    </select>
+    </div>
+   <div class="form-group col-md-1">
+      <label>Team</label>
+      <input v-model="third.team" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Player</label>
+      <input  v-model="third.name" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 1</label>
+    <select v-model="third.chars.char1" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 2</label>
+    <select v-model="third.chars.char2" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 3</label>
+    <select v-model="third.chars.char3" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 4</label>
+    <select v-model="third.chars.char4" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+  </div>
+
+       <!-- Fourth place -->
+ <div class="form-row">
+      <p class="placing">4th</p>
+      <div class="form-group col-md-1">
+      <label>Country</label>
+    <select v-model="fourth.country" class="form-control" id="exampleFormControlSelect1">
+      <option v-for="country in countries" :key="country">{{country}}</option>
+    </select>
+    </div>
+   <div class="form-group col-md-1">
+      <label>Team</label>
+      <input v-model="fourth.team" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Player</label>
+      <input  v-model="fourth.name" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 1</label>
+    <select v-model="fourth.chars.char1" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 2</label>
+    <select v-model="fourth.chars.char2" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 3</label>
+    <select v-model="fourth.chars.char3" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 4</label>
+    <select v-model="fourth.chars.char4" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+  </div>
+
+
+  <!-- Fifth place -->
+ <div class="form-row">
+      <p class="placing">5th</p>
+      <div class="form-group col-md-1">
+      <label>Country</label>
+    <select v-model="fifth.country" class="form-control" id="exampleFormControlSelect1">
+      <option v-for="country in countries" :key="country">{{country}}</option>
+    </select>
+    </div>
+   <div class="form-group col-md-1">
+      <label>Team</label>
+      <input v-model="fifth.team" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Player</label>
+      <input  v-model="fifth.name" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 1</label>
+    <select v-model="fifth.chars.char1" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 2</label>
+    <select v-model="fifth.chars.char2" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 3</label>
+    <select v-model="fifth.chars.char3" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 4</label>
+    <select v-model="fifth.chars.char4" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+  </div>
+
+    <!-- Fifth place 2 -->
+ <div class="form-row">
+      <p class="placing">5th</p>
+      <div class="form-group col-md-1">
+      <label>Country</label>
+    <select v-model="fifth2.country" class="form-control" id="exampleFormControlSelect1">
+      <option v-for="country in countries" :key="country">{{country}}</option>
+    </select>
+    </div>
+   <div class="form-group col-md-1">
+      <label>Team</label>
+      <input v-model="fifth2.team" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Player</label>
+      <input  v-model="fifth2.name" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 1</label>
+    <select v-model="fifth2.chars.char1" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 2</label>
+    <select v-model="fifth2.chars.char2" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 3</label>
+    <select v-model="fifth2.chars.char3" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 4</label>
+    <select v-model="fifth2.chars.char4" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+  </div>
+
+      <!-- Seventh place -->
+ <div class="form-row">
+      <p class="placing">7th</p>
+      <div class="form-group col-md-1">
+      <label>Country</label>
+    <select v-model="seventh.country" class="form-control" id="exampleFormControlSelect1">
+      <option v-for="country in countries" :key="country">{{country}}</option>
+    </select>
+    </div>
+   <div class="form-group col-md-1">
+      <label>Team</label>
+      <input v-model="seventh.team" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Player</label>
+      <input  v-model="seventh.name" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 1</label>
+    <select v-model="seventh.chars.char1" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 2</label>
+    <select v-model="seventh.chars.char2" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 3</label>
+    <select v-model="seventh.chars.char3" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 4</label>
+    <select v-model="seventh.chars.char4" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+  </div>
+
+
+       <!-- Seventh place 2 -->
+ <div class="form-row">
+      <p class="placing">7th</p>
+      <div class="form-group col-md-1">
+      <label>Country</label>
+    <select v-model="seventh2.country" class="form-control" id="exampleFormControlSelect1">
+      <option v-for="country in countries" :key="country">{{country}}</option>
+    </select>
+    </div>
+   <div class="form-group col-md-1">
+      <label>Team</label>
+      <input v-model="seventh2.team" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Player</label>
+      <input  v-model="seventh2.name" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 1</label>
+    <select v-model="seventh2.chars.char1" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 2</label>
+    <select v-model="seventh2.chars.char2" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 3</label>
+    <select v-model="seventh2.chars.char3" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 4</label>
+    <select v-model="seventh2.chars.char4" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+  </div>
+
+   <div class="form-row">
+      <p class="placing">Labels</p>
+          <div class="form-group col-md-1">
+      <label>Date</label>
+      <input v-model="labels.date" type="text" class="form-control" >
+    </div>
+
+        <div class="form-group col-md-1">
+      <label>Entrants</label>
+      <input v-model="labels.entrants" type="number" class="form-control" >
+    </div>
+       <div class="form-group col-md-1">
+      <label>Tournament</label>
+      <input v-model="labels.tourney" type="text" class="form-control" >
+    </div>
+   </div>
+</form>
+
+
+
+<button class="btn btn-primary" @click="createImg">Create</button>
+
+</div>
 </template>
 <style>
 .margin {
-  margin-left: 6%;
-  margin-right: 10%;
+  margin-left: 18%;
 }
 
 .placing {
@@ -74,7 +376,6 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 import Canvas from "canvas";
 import axios from "axios";
-
 
 export default {
   name: "home",
@@ -96,19 +397,19 @@ export default {
         name: "",
         chars: { char1: "", char2: "", char3: "", char4: "" }
       },
-      forth: {
+      fourth: {
         country: "",
         team: "",
         name: "",
         chars: { char1: "", char2: "", char3: "", char4: "" }
       },
-      fith: {
+      fifth: {
         country: "",
         team: "",
         name: "",
         chars: { char1: "", char2: "", char3: "", char4: "" }
       },
-      fith2: {
+      fifth2: {
         country: "",
         team: "",
         name: "",
@@ -126,7 +427,7 @@ export default {
         name: "",
         chars: { char1: "", char2: "", char3: "", char4: "" }
       },
-      labels:{
+      labels: {
         date: "",
         entrants: "",
         tourney: ""
@@ -238,21 +539,75 @@ export default {
     async createImg() {
       console.log(this.second);
       axios.post("http://localhost:3000/images", {
-        second:{
-            country: this.second.country,
-            team: this.second.team,
-            name: this.second.name,
-            char1: this.second.chars.char1,
-            char2: this.second.chars.char2,
-            char3: this.second.chars.char3,
-            char4: this.second.chars.char4
+        second: {
+          country: this.second.country,
+          team: this.second.team,
+          name: this.second.name,
+          char1: this.second.chars.char1,
+          char2: this.second.chars.char2,
+          char3: this.second.chars.char3,
+          char4: this.second.chars.char4
         },
-        labels:{
+        third: {
+          country: this.third.country,
+          team: this.third.team,
+          name: this.third.name,
+          char1: this.third.chars.char1,
+          char2: this.third.chars.char2,
+          char3: this.third.chars.char3,
+          char4: this.third.chars.char4
+        },
+        fourth: {
+          country: this.fourth.country,
+          team: this.fourth.team,
+          name: this.fourth.name,
+          char1: this.fourth.chars.char1,
+          char2: this.fourth.chars.char2,
+          char3: this.fourth.chars.char3,
+          char4: this.fourth.chars.char4
+        },
+        fifth: {
+          country: this.fifth.country,
+          team: this.fifth.team,
+          name: this.fifth.name,
+          char1: this.fifth.chars.char1,
+          char2: this.fifth.chars.char2,
+          char3: this.fifth.chars.char3,
+          char4: this.fifth.chars.char4
+        },
+        fifth2: {
+          country: this.fifth2.country,
+          team: this.fifth2.team,
+          name: this.fifth2.name,
+          char1: this.fifth2.chars.char1,
+          char2: this.fifth2.chars.char2,
+          char3: this.fifth2.chars.char3,
+          char4: this.fifth2.chars.char4
+        },
+        seventh: {
+          country: this.seventh.country,
+          team: this.seventh.team,
+          name: this.seventh.name,
+          char1: this.seventh.chars.char1,
+          char2: this.seventh.chars.char2,
+          char3: this.seventh.chars.char3,
+          char4: this.seventh.chars.char4
+        },
+        seventh2: {
+          country: this.seventh2.country,
+          team: this.seventh2.team,
+          name: this.seventh2.name,
+          char1: this.seventh2.chars.char1,
+          char2: this.seventh2.chars.char2,
+          char3: this.seventh2.chars.char3,
+          char4: this.seventh2.chars.char4
+        },
+        labels: {
           date: this.labels.date,
           entrants: this.labels.entrants,
           tourney: this.labels.tourney
         }
-        });
+      });
     }
   }
 };
