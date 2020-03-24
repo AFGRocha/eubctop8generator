@@ -3,8 +3,60 @@
     <h1>EUBC Top 8 Generator</h1>
 <form>
  <div class="form-row">
+ <!-- first place -->
+    <p class="placing">1nd</p>
+      <div class="form-group col-md-1">
+      <label>Country</label>
+    <select v-model="first.country" class="form-control" id="exampleFormControlSelect1">
+      <option v-for="country in countries" :key="country">{{country}}</option>
+    </select>
+    </div>
+   <div class="form-group col-md-1">
+      <label>Team</label>
+      <input v-model="first.team" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Player</label>
+      <input  v-model="first.name" type="text" class="form-control" >
+    </div>
+    <div class="form-group col-md-1">
+      <label>Character 1</label>
+    <select v-model="first.chars.char1" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Color</label>
+    <select v-model="first.color" class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 2</label>
+    <select v-model="first.chars.char2" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+        <div class="form-group col-md-1">
+      <label>Character 3</label>
+    <select v-model="first.chars.char3" class="form-control" id="exampleFormControlSelect1">
+      <option></option>
+      <option v-for="character in characters" :key="character">{{character}}</option>
+    </select>
+    </div>
+  </div>
 
    <!-- second place -->
+    <div class="form-row">
     <p class="placing">2nd</p>
       <div class="form-group col-md-1">
       <label>Country</label>
@@ -385,6 +437,13 @@ export default {
 
   data: function() {
     return {
+      first: {
+        country: "",
+        team: "",
+        name: "",
+        color: 0,
+        chars: { char1: "", char2: "", char3: "",}
+      },
       second: {
         country: "",
         team: "",
@@ -539,6 +598,15 @@ export default {
     async createImg() {
       console.log(this.second);
       axios.post("http://localhost:3000/images", {
+          first: {
+          country: this.first.country,
+          team: this.first.team,
+          name: this.first.name,
+          color: this.first.color,
+          char1: this.first.chars.char1,
+          char2: this.first.chars.char2,
+          char3: this.first.chars.char3,
+        },
         second: {
           country: this.second.country,
           team: this.second.team,
