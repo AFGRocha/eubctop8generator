@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Row extends React.Component {
+class First extends React.Component {
     render() {
         return (<div>
-
+            <h2>{this.props.place} </h2>
             <label>Country</label>
             <select>
                 <option >teste</option>
@@ -45,4 +45,4 @@ class Row extends React.Component {
     }
 }
 
-export default Row;
+export default First;
