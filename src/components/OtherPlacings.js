@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 //import countries from './data/euro-countries.json'
 
 class Row extends React.Component {
@@ -8,6 +7,7 @@ class Row extends React.Component {
         super(props);
         this.state = {
             countries: [
+                " ",
                 "Austria",
                 "Belgium",
                 "Denmark",
@@ -25,6 +25,7 @@ class Row extends React.Component {
                 "United Kingdom"
             ],
             characters: [
+                " ",
                 "Banjo & Kazooie",
                 "Bayonetta",
                 "Bowser",
@@ -72,6 +73,7 @@ class Row extends React.Component {
                 "Mii Brawler",
                 "Mii Swordfighter",
                 "Mii Gunner",
+                "Min MinS",
                 "Mr. Game & Watch",
                 "Ness",
                 "Olimar",
@@ -97,6 +99,7 @@ class Row extends React.Component {
                 "Snake",
                 "Sonic",
                 "Squirtle",
+                "Steve",
                 "Terry",
                 "Toon Link",
                 "Villager",
@@ -106,10 +109,21 @@ class Row extends React.Component {
                 "Yoshi",
                 "Young Link",
                 "Zelda",
-                "Zero Suit Samus"
-            ]
+                "Zero Suit Samus",
+            ],
+            countryValue: "",
         };
     }
+
+   
+    onChangeData(event){
+        this.setState({countryValue: event.target.value});
+        //console.log(this.state.countryValue)
+        console.log(event.target.getAttribute("id"))
+        this.props.changeData({[event.target.getAttribute("id")]: event.target.value, placing:this.props.place, id: event.target.getAttribute("id")})
+        
+    }
+
     render() {
         const countryNames = this.state.countries.map((country) =>
             <option>{country}</option>);
@@ -119,21 +133,21 @@ class Row extends React.Component {
 
 
         return (<div>
-            <h2>{this.props.place} </h2>
+            <h2>{this.props.name} </h2>
             <label>Country</label>
-            <select>{countryNames}</select>
+            <select id="country" onChange={this.onChangeData.bind(this)}>{countryNames}</select>
             <label>Team</label>
-            <input type="text" />
+            <input id="team" onChange={this.onChangeData.bind(this)} type="text" />   
             <label>Player</label>
-            <input type="text" />
-            <label>Character 1</label>
-            <select>{characterNames}</select>
+            <input id="name"onChange={this.onChangeData.bind(this)} type="text" />
+            <label >Character 1</label>
+            <select id="char1" onChange={this.onChangeData.bind(this)}>{characterNames}</select>
             <label>Character 2</label>
-            <select>{characterNames}</select>
-            <label>Character 3</label>
-            <select>{characterNames}</select>
+            <select id="char2"onChange={this.onChangeData.bind(this)}>{characterNames}</select>
+            <label >Character 3</label>
+            <select id="char3"onChange={this.onChangeData.bind(this)}>{characterNames}</select>
             <label>Character 4</label>
-            <select>{characterNames}</select>
+            <select id="char4" onChange={this.onChangeData.bind(this)}>{characterNames}</select>
 
         </div>);
     }
