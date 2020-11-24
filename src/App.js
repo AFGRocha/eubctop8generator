@@ -1,7 +1,9 @@
 import './App.css';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import First from './components/1stPlace';
 import Row from './components/OtherPlacings';
+import Canvas from './components/Canvas';
 
 class App extends React.Component {
   constructor(props) {
@@ -81,7 +83,8 @@ class App extends React.Component {
       },
       date: "",
       entrants: "",
-      tournament: ""
+      tournament: "",
+      clicked: false
     };
   }
 
@@ -95,16 +98,16 @@ class App extends React.Component {
     data[newData.id] = newData[newData.id];                     // update the property, assign a new value                 
 
     this.setState({ [newData.placing]: data });
+    this.setState({ clicked: false })
 
   }
 
-  onLabelsChange(event){
-    this.setState({[event.target.getAttribute("id")]: event.target.value});
+  onLabelsChange(event) {
+    this.setState({ [event.target.getAttribute("id")]: event.target.value });
   }
 
-  onSubmit(){
-    let obj = this.state
-    console.log(obj)
+  onSubmit() {
+    this.setState({ clicked: true })
   }
 
   render() {
@@ -122,14 +125,22 @@ class App extends React.Component {
         <br></br>
         <div> <p class="placing">Labels</p>
           <label>Date</label>
-          <input id="date" onChange={this.onLabelsChange.bind(this)} type="text"/>
+          <input id="date" onChange={this.onLabelsChange.bind(this)} type="text" />
           <label>Entrants</label>
-          <input id="entrants" onChange={this.onLabelsChange.bind(this)} type="number"  />
+          <input id="entrants" onChange={this.onLabelsChange.bind(this)} type="number" />
           <label>Tournament</label>
           <input id="tournament" onChange={this.onLabelsChange.bind(this)} type="text"  ></input></div>
-          <br></br>
+        <br></br>
 
-        <button onClick={this.onSubmit.bind(this)}>teste</button>
+        <button onClick={this.onSubmit.bind(this)}>Send</button>
+        <br></br><br></br>
+        {
+          this.state.clicked ?
+            <Canvas id="canvas" data={this.state} />
+            :
+            <div></div>
+        }
+
       </div>
     );
   }
