@@ -1,5 +1,6 @@
 import React from 'react';
 import background from '../assets/eubc_imgs/background.png'
+import FirstIMG from '../assets/eubc_imgs/1st.png'
 
 class Canvas extends React.Component {
     constructor(props) {
@@ -42,11 +43,68 @@ class Canvas extends React.Component {
         img.onload = function () {
             ctx.drawImage(img, 0, 0, 680, 849);
 
+            //First place
+            ctx.shadowOffsetX = 3;
+            ctx.shadowOffsetY = 3;
+            ctx.shadowColor = "rgba(0,0,0,0.3)";
+            if (data.first.team != "") {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#f8cf24";
+                ctx.fillText(data.first.team, 177, 389);
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.first.name, ctx.measureText(data.first.team).width + 183, 389);
+            }
+            else {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.first.name, 177, 389);
+            }
+            ctx.shadowOffsetX = 0
+            ctx.shadowOffsetY = 0
+            //stock icons
+            //const fullImg = await Canvas.loadImage(`./assets/renders/${req.body.first.char1} (1).png`);
+            //ctx.drawImage(fullImg, 570 - ((fullImg.width / 5.5) / 2), 250, fullImg.width / 5.5, fullImg.height / 5.5);
+            //ctx.drawImage(fullImg, 570 - ((fullImg.width/(fullImg.width/315.63))/2), 400 - ((fullImg.height/(fullImg.height/326.36))/2), fullImg.width/(fullImg.width/315.63), fullImg.height/(fullImg.height/326.36));
+
+            /*
+            if (data.first.char2 != "") {
+                const firstStock2 = require('../assets/stocks/' + data.first.char2 + '.png')
+                let firstStock2IMG = new Image();
+                firstStock2IMG.src = firstStock2.default
+                firstStock2IMG.onload = function () {
+                    ctx.drawImage(firstStock2IMG, 547, 408, 40, 42);
+                }
+            }
+            if (data.first.char3 != "") {
+                const firstStock3 = require('../assets/stocks/' + data.first.char2 + '.png')
+                let firstStock3IMG = new Image();
+                firstStock3IMG.src = firstStock3.default
+                firstStock3IMG.onload = function () {
+                    ctx.drawImage(firstStock3IMG, 504, 408, 40, 42);
+                }
+                
+            }*/
+
+            //flag
+            const flag1st = require('../assets/flags/' + data.first.country + '.png');
+            let flag1stImg = new Image()
+            flag1stImg.src = flag1st.default
+            flag1stImg.onload = function () {
+                ctx.drawImage(flag1stImg, 104, 349);
+            }
+
+            //Number 1 image
+            const one = new Image()
+            one.src = FirstIMG;
+            one.onload = function () {
+                ctx.drawImage(one, 15, 320);
+            }
+           
             //Second Place
             ctx.shadowOffsetX = 3;
             ctx.shadowOffsetY = 3;
             ctx.shadowColor = "rgba(0,0,0,0.3)";
-            if (data.second.team != "") {
+            if (data.second.team != "" || data.second.team != " ") {
                 ctx.font = '35px Gobold'
                 ctx.fillStyle = "#f8cf24";
                 ctx.fillText(data.second.team, 177, 446);
@@ -109,7 +167,7 @@ class Canvas extends React.Component {
             ctx.shadowOffsetX = 3;
             ctx.shadowOffsetY = 3;
             ctx.shadowColor = "rgba(0,0,0,0.3)";
-            if (data.third.team != "") {
+            if (data.third.team != "" || data.third.team != " ") {
                 ctx.font = '35px "Gobold"'
                 ctx.fillStyle = "#f8cf24";
                 ctx.fillText(data.third.team, 177, 505);
@@ -130,7 +188,7 @@ class Canvas extends React.Component {
             stock3rdImg.onload = function () {
                 ctx.drawImage(stock3rdImg, 590, 465, 40, 42);
             }
-            
+
             if (data.third.char2 != "") {
                 const stock3rd2 = require('../assets/stocks/' + data.third.char2 + '.png')
                 let stock3rdImg2 = new Image();
@@ -138,7 +196,7 @@ class Canvas extends React.Component {
                 stock3rdImg2.onload = function () {
                     ctx.drawImage(stock3rdImg2, 547, 465, 40, 42);
                 }
-                
+
             }
             if (data.third.char3 != "") {
                 const stock3rd3 = require('../assets/stocks/' + data.third.char3 + '.png')
@@ -147,19 +205,19 @@ class Canvas extends React.Component {
                 stock3rdImg3.onload = function () {
                     ctx.drawImage(stock3rdImg3, 504, 465, 40, 42);
                 }
-                
-                
+
+
             }
             if (data.third.char4 != "") {
                 const stock3rd4 = require('../assets/stocks/' + data.third.char4 + '.png')
-                
+
                 let stock3rdImg4 = new Image();
                 stock3rdImg4.src = stock3rd4.default
                 stock3rdImg4.onload = function () {
                     ctx.drawImage(stock3rdImg4, 461, 465, 40, 42);;
                 }
-                
-              
+
+
             }
 
             //flag
@@ -170,7 +228,7 @@ class Canvas extends React.Component {
                 ctx.drawImage(flag3rdImg, 104, 463);
             }
 
-            
+
 
 
         }
