@@ -99,7 +99,7 @@ class Canvas extends React.Component {
             one.onload = function () {
                 ctx.drawImage(one, 15, 320);
             }
-           
+
             //Second Place
             ctx.shadowOffsetX = 3;
             ctx.shadowOffsetY = 3;
@@ -228,6 +228,70 @@ class Canvas extends React.Component {
                 ctx.drawImage(flag3rdImg, 104, 463);
             }
 
+
+            //Fourth place
+            ctx.shadowOffsetX = 3;
+            ctx.shadowOffsetY = 3;
+            ctx.shadowColor = "rgba(0,0,0,0.3)";
+            if (data.fourth.team != "" || data.fourth.team != " ") {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#f8cf24";
+                ctx.fillText(data.fourth.team, 177, 562);
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.fourth.name, ctx.measureText(data.fourth.team).width + 183, 562);
+            }
+            else {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.fourth.name, 177, 562);
+            }
+            ctx.shadowOffsetX = 0
+            ctx.shadowOffsetY = 0
+            //stock icons
+            const stock4th = require('../assets/stocks/' + data.fourth.char1 + '.png')
+            let stock4thImg = new Image()
+            stock4thImg.src = stock4th.default
+            stock4thImg.onload = function () {
+                ctx.drawImage(stock4thImg, 590, 522, 40, 42);
+            }
+
+            if (data.fourth.char2 != "") {
+                const stock4th2 = require('../assets/stocks/' + data.fourth.char2 + '.png')
+                let stock4th2Img = new Image()
+                stock4th2Img.src = stock4th2.default
+                stock4th2Img.onload = function () {
+                    ctx.drawImage(stock4th2Img, 547, 522, 40, 42);
+                }
+               
+            }
+            if (data.fourth.char3 != "") {
+                const stock4th3 = require('../assets/stocks/' + data.fourth.char4 + '.png')
+                let stock4th3Img = new Image()
+                stock4th3Img.src = stock4th3.default
+                stock4th3Img.onload = function () {
+                    ctx.drawImage(stock4th3Img, 504, 522, 40, 42);
+                }
+                
+            }
+            if (data.fourth.char4 != "") {
+                const stock4th4 = require('../assets/stocks/' + data.fourth.char4 + '.png')
+                let stock4th4Img = new Image()
+                stock4th4Img.src = stock4th4.default
+                stock4th4Img.onload = function () {
+                    ctx.drawImage(stock4th4Img, 461, 522, 40, 42);
+                }
+                
+               
+            }
+
+            //flag
+            const flag4th = require('../assets/flags/' + data.fourth.country + '.png')
+            let flag4thImg = new Image()
+            flag4thImg.src = flag4th.default
+            flag4thImg.onload = function () {
+                ctx.drawImage(flag4thImg, 104, 520);
+            }
+            
 
 
 

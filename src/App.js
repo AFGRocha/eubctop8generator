@@ -36,7 +36,7 @@ class App extends React.Component {
         char3: "",
         char4: ""
       },
-      forth: {
+      fourth: {
         country: "",
         team: "",
         name: "",
@@ -119,7 +119,7 @@ class App extends React.Component {
             <First place="first" name="1st" changeData={this.onDataChange.bind(this)} />
             <Row place="second" name="2nd" changeData={this.onDataChange.bind(this)} />
             <Row place="third" name="3rd" changeData={this.onDataChange.bind(this)} />
-            <Row place="forth" name="4th" changeData={this.onDataChange.bind(this)} />
+            <Row place="fourth" name="4th" changeData={this.onDataChange.bind(this)} />
             <Row place="fifth" name="5th" changeData={this.onDataChange.bind(this)} />
             <Row place="fifth2" name="5th" changeData={this.onDataChange.bind(this)} />
             <Row place="seventh" name="7th" changeData={this.onDataChange.bind(this)} />
