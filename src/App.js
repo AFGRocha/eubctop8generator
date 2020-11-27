@@ -114,32 +114,40 @@ class App extends React.Component {
     return (
       <div>
         <h1>EUBC Top 8 Generator</h1>
-        <First place="first" name="1st" changeData={this.onDataChange.bind(this)} />
-        <Row place="second" name="2nd" changeData={this.onDataChange.bind(this)} />
-        <Row place="third" name="3rd" changeData={this.onDataChange.bind(this)} />
-        <Row place="forth" name="4th" changeData={this.onDataChange.bind(this)} />
-        <Row place="fifth" name="5th" changeData={this.onDataChange.bind(this)} />
-        <Row place="fifth2" name="5th" changeData={this.onDataChange.bind(this)} />
-        <Row place="seventh" name="7th" changeData={this.onDataChange.bind(this)} />
-        <Row place="seventh2" name="7th" changeData={this.onDataChange.bind(this)} />
-        <br></br>
-        <div> <p class="placing">Labels</p>
-          <label>Date</label>
-          <input id="date" onChange={this.onLabelsChange.bind(this)} type="text" />
-          <label>Entrants</label>
-          <input id="entrants" onChange={this.onLabelsChange.bind(this)} type="number" />
-          <label>Tournament</label>
-          <input id="tournament" onChange={this.onLabelsChange.bind(this)} type="text"  ></input></div>
-        <br></br>
+        <div class="grid-container">
+          <div class="grid-container">
+            <First place="first" name="1st" changeData={this.onDataChange.bind(this)} />
+            <Row place="second" name="2nd" changeData={this.onDataChange.bind(this)} />
+            <Row place="third" name="3rd" changeData={this.onDataChange.bind(this)} />
+            <Row place="forth" name="4th" changeData={this.onDataChange.bind(this)} />
+            <Row place="fifth" name="5th" changeData={this.onDataChange.bind(this)} />
+            <Row place="fifth2" name="5th" changeData={this.onDataChange.bind(this)} />
+            <Row place="seventh" name="7th" changeData={this.onDataChange.bind(this)} />
+            <Row place="seventh2" name="7th" changeData={this.onDataChange.bind(this)} />
 
-        <button onClick={this.onSubmit.bind(this)}>Send</button>
-        <br></br><br></br>
-        {
-          this.state.clicked ?
-            <Canvas id="canvas" data={this.state} />
-            :
-            <div></div>
-        }
+          </div>
+
+
+          {
+            this.state.clicked ?
+              <Canvas id="canvas" data={this.state} />
+              :
+              <div class="empty"></div>
+          }
+        </div>
+        
+        <div class="labels">
+          <p>Labels</p>
+          <label>Date: </label>
+          <input id="date" onChange={this.onLabelsChange.bind(this)} type="text" />
+          <label>Entrants: </label>
+          <input id="entrants" onChange={this.onLabelsChange.bind(this)} type="number" />
+          <label>Tournament: </label>
+          <input id="tournament" onChange={this.onLabelsChange.bind(this)} type="text"  ></input>
+          
+          <button onClick={this.onSubmit.bind(this)}>Send</button>
+        </div>
+
 
       </div>
     );

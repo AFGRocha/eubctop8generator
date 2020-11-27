@@ -27,3 +27,29 @@ code {
   font-family: 'Gobold';
   src: url('Gobold Bold Italic.otf');
 }
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+
+
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+}
+
+select{
+  line-break: auto;
+}
+
+.empty{
+  width:650px; /* or whatever width you want. */
+  max-width:650px; /* or whatever width you want. */
+  display: inline-block;
+}
+
+.labels{
+  padding: 10px;
+}

@@ -109,17 +109,17 @@ class First extends React.Component {
                 "Young Link",
                 "Zelda",
                 "Zero Suit Samus"
-                
+
             ]
         };
     }
-   
-    onChangeData(event){
-        this.setState({countryValue: event.target.value});
+
+    onChangeData(event) {
+        this.setState({ countryValue: event.target.value });
         //console.log(this.state.countryValue)
         console.log(event.target.getAttribute("id"))
-        this.props.changeData({[event.target.getAttribute("id")]: event.target.value, placing:this.props.place, id: event.target.getAttribute("id")})
-        
+        this.props.changeData({ [event.target.getAttribute("id")]: event.target.value, placing: this.props.place, id: event.target.getAttribute("id") })
+
     }
 
     render() {
@@ -129,31 +129,38 @@ class First extends React.Component {
         const characterNames = this.state.characters.map((character) =>
             <option>{character}</option>);
 
-        return (<div>
+        return (<div class="grid-item">
             <h2>{this.props.name} </h2>
-            <label>Country</label>
-            <select id="country" onChange={this.onChangeData.bind(this)}>{countryNames}</select>
-            <label>Team</label>
-            <input id="team" onChange={this.onChangeData.bind(this)} type="text" />
-            <label>Player</label>
-            <input id="name" onChange={this.onChangeData.bind(this)} type="text" />
-            <label>Character 1</label>
-            <select id="char1" onChange={this.onChangeData.bind(this)} >{characterNames}</select>
-            <label>Color</label>
-            <select id="color" onChange={this.onChangeData.bind(this)}>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-            </select>
-            <label>Character 2</label>
-            <select id="char2" onChange={this.onChangeData.bind(this)}>{characterNames}</select>
-            <label>Character 3</label>
-            <select id="char3" onChange={this.onChangeData.bind(this)}>{characterNames}</select>
+            <div>  <label>Country</label>
+                <select id="country" onChange={this.onChangeData.bind(this)}>{countryNames}</select>
+            </div>
+            <div>  <label>Team</label>
+                <input id="team" onChange={this.onChangeData.bind(this)} type="text" />
+            </div>
+            <div>  <label>Player</label>
+                <input id="name" onChange={this.onChangeData.bind(this)} type="text" />
+            </div>
+            <div>     <label>Character 1</label>
+                <select id="char1" onChange={this.onChangeData.bind(this)} >{characterNames}</select>
+            </div>
+            <div>        <label>Color</label>
+                <select id="color" onChange={this.onChangeData.bind(this)}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                </select></div>
+
+            <div> <label>Character 2</label>
+                <select id="char2" onChange={this.onChangeData.bind(this)}>{characterNames}</select>
+            </div>
+            <div><label>Character 3</label>
+                <select id="char3" onChange={this.onChangeData.bind(this)}>{characterNames}</select>
+            </div>
 
         </div>);
     }
