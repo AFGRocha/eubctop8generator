@@ -29,6 +29,8 @@ class Canvas extends React.Component {
     componentWillReceiveProps() {
         this.updateCanvas();
     }
+
+
     updateCanvas() {
         const data = this.props.data;
         const ctx = this.refs.canvas.getContext('2d');
@@ -262,7 +264,7 @@ class Canvas extends React.Component {
                 stock4th2Img.onload = function () {
                     ctx.drawImage(stock4th2Img, 547, 522, 40, 42);
                 }
-               
+
             }
             if (data.fourth.char3 != "") {
                 const stock4th3 = require('../assets/stocks/' + data.fourth.char4 + '.png')
@@ -271,7 +273,7 @@ class Canvas extends React.Component {
                 stock4th3Img.onload = function () {
                     ctx.drawImage(stock4th3Img, 504, 522, 40, 42);
                 }
-                
+
             }
             if (data.fourth.char4 != "") {
                 const stock4th4 = require('../assets/stocks/' + data.fourth.char4 + '.png')
@@ -280,8 +282,8 @@ class Canvas extends React.Component {
                 stock4th4Img.onload = function () {
                     ctx.drawImage(stock4th4Img, 461, 522, 40, 42);
                 }
-                
-               
+
+
             }
 
             //flag
@@ -291,9 +293,133 @@ class Canvas extends React.Component {
             flag4thImg.onload = function () {
                 ctx.drawImage(flag4thImg, 104, 520);
             }
+
+            //Fifth place
+            ctx.shadowOffsetX = 3;
+            ctx.shadowOffsetY = 3;
+            ctx.shadowColor = "rgba(0,0,0,0.3)";
+            if (data.fifth.team != "" || data.fifth.team != " ") {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#f8cf24";
+                ctx.fillText(data.fifth.team, 177, 619);
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.fifth.name, ctx.measureText(data.fifth.team).width + 183, 619);
+            }
+            else {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.fifth.name, 177, 619);
+            }
+            ctx.shadowOffsetX = 0
+            ctx.shadowOffsetY = 0
+            //stock icons
+            const stock5th = require('../assets/stocks/' + data.fifth.char1 + '.png')
+            let stock5thImg = new Image()
+            stock5thImg.src = stock5th.default
+            stock5thImg.onload = function () {
+                ctx.drawImage(stock5thImg, 590, 579, 40, 42);
+            }
+
+            if (data.fifth.char2 != "") {
+                const stock5th2 = require('../assets/stocks/' + data.fifth.char1 + '.png')
+                let stock5th2Img = new Image()
+                stock5th2Img.src = stock5th2.default
+                stock5th2Img.onload = function () {
+                    ctx.drawImage(stock5th2Img, 547, 579, 40, 42);
+                }
+
+            }
+            if (data.fifth.char3 != "") {
+                const stock5th3 = require('../assets/stocks/' + data.fifth.char1 + '.png')
+                let stock5th3Img = new Image()
+                stock5th3Img.src = stock5th3.default
+                stock5th3Img.onload = function () {
+                    ctx.drawImage(stock5th3Img, 504, 579, 40, 42);
+                }
+
+            }
+            if (data.fifth.char4 != "") {
+                const stock5th4 = require('../assets/stocks/' + data.fifth.char1 + '.png')
+                let stock5th4Img = new Image()
+                stock5th4Img.src = stock5th4.default
+                stock5th4Img.onload = function () {
+                    ctx.drawImage(stock5th4Img, 461, 579, 40, 42);
+                }
+
+            }
+
+            //flag
+            const flag5th = require('../assets/flags/' + data.fifth.country + '.png')
+            let flag5thImg = new Image()
+            flag5thImg.src = flag5th.default
+            flag5thImg.onload = function () {
+                ctx.drawImage(flag5thImg, 104, 577);
+            }
+
+
+            //Fifth place 2
+            ctx.shadowOffsetX = 3;
+            ctx.shadowOffsetY = 3;
+            ctx.shadowColor = "rgba(0,0,0,0.3)";
+            if (data.fifth2.team != "" || data.fifth2.team != " ") {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#f8cf24";
+                ctx.fillText(data.fifth2.team, 177, 676);
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.fifth2.name, ctx.measureText(data.fifth2.team).width + 183, 676);
+            }
+            else {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.fifth2.name, 177, 676);
+            }
+            ctx.shadowOffsetX = 0
+            ctx.shadowOffsetY = 0
+            //stock icons
+            const stock5th21 = require('../assets/stocks/' + data.fifth2.char1 + '.png')
+            let stock5th21Img = new Image()
+            stock5th21Img.src = stock5th21.default
+            stock5th21Img.onload = function () {
+                ctx.drawImage(stock5th21Img, 590, 636, 40, 42);
+            }
+  
+            if (data.fifth2.char2 != "") {
+                const stock5th22 = require('../assets/stocks/' + data.fifth2.char2 + '.png')
+                let stock5th22Img = new Image()
+                stock5th22Img.src = stock5th22.default
+                stock5th22Img.onload = function () {
+                    ctx.drawImage(stock5th22Img, 547, 636, 40, 42);
+                }
+                
+                
+            }
+            if (data.fifth2.char3 != "") {
+                const stock5th23 = require('../assets/stocks/' + data.fifth2.char3 + '.png')
+                let stock5th23Img = new Image()
+                stock5th23Img.src = stock5th23.default
+                stock5th23Img.onload = function () {
+                    ctx.drawImage(stock5th23Img, 504, 636, 40, 42);
+                }
+                
+            }
+            if (data.fifth2.char4 != "") {
+                const stock5th24 = require('../assets/stocks/' + data.fifth2.char4 + '.png')
+                let stock5th24Img = new Image()
+                stock5th24Img.src = stock5th24.default
+                stock5th24Img.onload = function () {
+                    ctx.drawImage(stock5th24Img, 461, 636, 40, 42);
+                }
+                
+            }
+
+            //flag
+            const flag5th2 = require('../assets/flags/' + data.fifth2.country + '.png')
+            let flag5th2Img = new Image()
+            flag5th2Img.src = flag5th2.default
+            flag5th2Img.onload = function () {
+                ctx.drawImage(flag5th2Img, 104, 634);
+            }
             
-
-
 
         }
 
@@ -309,6 +435,8 @@ class Canvas extends React.Component {
 
         );
     }
+
+
 }
 
 export default Canvas;
