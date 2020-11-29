@@ -321,7 +321,7 @@ class Canvas extends React.Component {
             }
 
             if (data.fifth.char2 != "") {
-                const stock5th2 = require('../assets/stocks/' + data.fifth.char1 + '.png')
+                const stock5th2 = require('../assets/stocks/' + data.fifth.char2 + '.png')
                 let stock5th2Img = new Image()
                 stock5th2Img.src = stock5th2.default
                 stock5th2Img.onload = function () {
@@ -330,7 +330,7 @@ class Canvas extends React.Component {
 
             }
             if (data.fifth.char3 != "") {
-                const stock5th3 = require('../assets/stocks/' + data.fifth.char1 + '.png')
+                const stock5th3 = require('../assets/stocks/' + data.fifth.char3 + '.png')
                 let stock5th3Img = new Image()
                 stock5th3Img.src = stock5th3.default
                 stock5th3Img.onload = function () {
@@ -339,7 +339,7 @@ class Canvas extends React.Component {
 
             }
             if (data.fifth.char4 != "") {
-                const stock5th4 = require('../assets/stocks/' + data.fifth.char1 + '.png')
+                const stock5th4 = require('../assets/stocks/' + data.fifth.char4 + '.png')
                 let stock5th4Img = new Image()
                 stock5th4Img.src = stock5th4.default
                 stock5th4Img.onload = function () {
@@ -382,7 +382,7 @@ class Canvas extends React.Component {
             stock5th21Img.onload = function () {
                 ctx.drawImage(stock5th21Img, 590, 636, 40, 42);
             }
-  
+
             if (data.fifth2.char2 != "") {
                 const stock5th22 = require('../assets/stocks/' + data.fifth2.char2 + '.png')
                 let stock5th22Img = new Image()
@@ -390,8 +390,8 @@ class Canvas extends React.Component {
                 stock5th22Img.onload = function () {
                     ctx.drawImage(stock5th22Img, 547, 636, 40, 42);
                 }
-                
-                
+
+
             }
             if (data.fifth2.char3 != "") {
                 const stock5th23 = require('../assets/stocks/' + data.fifth2.char3 + '.png')
@@ -400,7 +400,7 @@ class Canvas extends React.Component {
                 stock5th23Img.onload = function () {
                     ctx.drawImage(stock5th23Img, 504, 636, 40, 42);
                 }
-                
+
             }
             if (data.fifth2.char4 != "") {
                 const stock5th24 = require('../assets/stocks/' + data.fifth2.char4 + '.png')
@@ -409,7 +409,7 @@ class Canvas extends React.Component {
                 stock5th24Img.onload = function () {
                     ctx.drawImage(stock5th24Img, 461, 636, 40, 42);
                 }
-                
+
             }
 
             //flag
@@ -419,7 +419,143 @@ class Canvas extends React.Component {
             flag5th2Img.onload = function () {
                 ctx.drawImage(flag5th2Img, 104, 634);
             }
-            
+
+
+            //Seventh place -----------------------------------------------------------------------------------------------------------------
+            ctx.shadowOffsetX = 3;
+            ctx.shadowOffsetY = 3;
+            ctx.shadowColor = "rgba(0,0,0,0.3)";
+            if (data.seventh.team != "" || data.seventh.team != " ") {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#f8cf24";
+                ctx.fillText(data.seventh.team, 177, 733);
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.seventh.name, ctx.measureText(data.seventh.team).width + 183, 733);
+            }
+            else {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.seventh.name, 177, 619);
+            }
+            ctx.shadowOffsetX = 0
+            ctx.shadowOffsetY = 0
+            //stock icons
+            const stock7th = require('../assets/stocks/' + data.seventh.char1 + '.png')
+            let stock7thImg = new Image()
+            stock7thImg.src = stock7th.default
+            stock7thImg.onload = function () {
+                ctx.drawImage(stock7thImg, 590, 693, 40, 42);
+            }
+
+            if (data.seventh.char2 != "") {
+                const stock7th2 = require('../assets/stocks/' + data.seventh.char2 + '.png')
+                let stock7th2Img = new Image()
+                stock7th2Img.src = stock7th2.default
+                stock7th2Img.onload = function () {
+                    ctx.drawImage(stock7th2Img, 547, 693, 40, 42);
+                }
+
+            }
+            if (data.seventh.char3 != "") {
+                const stock7th3 = require('../assets/stocks/' + data.seventh.char3 + '.png')
+                let stock7th3Img = new Image()
+                stock7th3Img.src = stock7th3.default
+                stock7th3Img.onload = function () {
+                    ctx.drawImage(stock7th3Img, 504, 693, 40, 42);
+                }
+
+            }
+            if (data.seventh.char4 != "") {
+                const stock7th4 = require('../assets/stocks/' + data.seventh.char4 + '.png')
+                let stock7th4Img = new Image()
+                stock7th4Img.src = stock7th4.default
+                stock7th4Img.onload = function () {
+                    ctx.drawImage(stock7th4Img, 461, 693, 40, 42);
+                }
+
+
+            }
+
+            //flag
+            const flag7th = require('../assets/flags/' + data.seventh.country + '.png')
+            let flag7thImg = new Image()
+            flag7thImg.src = flag7th.default
+            flag7thImg.onload = function () {
+                ctx.drawImage(flag7thImg, 104, 691);
+            }
+
+
+            //Seventh place 2 -----------------------------------------------------------------------------------------------------------------
+            ctx.shadowOffsetX = 3;
+            ctx.shadowOffsetY = 3;
+            ctx.shadowColor = "rgba(0,0,0,0.3)";
+            if (data.seventh2.team != "" || data.seventh2.team != " ") {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#f8cf24";
+                ctx.fillText(data.seventh2.team, 177, 790);
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.seventh2.name, ctx.measureText(data.seventh2.team).width + 183, 790);
+            }
+            else {
+                ctx.font = '35px "Gobold"'
+                ctx.fillStyle = "#FFFFFF";
+                ctx.fillText(data.seventh2.name, 177, 790);
+            }
+            ctx.shadowOffsetX = 0
+            ctx.shadowOffsetY = 0
+            //stock icons
+            const stock7th21 = require('../assets/stocks/' + data.seventh2.char1 + '.png')
+            let stock7th21Img = new Image()
+            stock7th21Img.src = stock7th21.default
+            stock7th21Img.onload = function () {
+                ctx.drawImage(stock7th21Img, 590, 750, 40, 42);
+            }
+
+            if (data.seventh2.char2 != "") {
+                const stock7th22 = require('../assets/stocks/' + data.seventh2.char2 + '.png')
+                let stock7th22Img = new Image()
+                stock7th22Img.src = stock7th22.default
+                stock7th22Img.onload = function () {
+                    ctx.drawImage(stock7th22Img, 547, 750, 40, 42);
+                }
+
+            }
+            if (data.seventh2.char3 != "") {
+                const stock7th23 = require('../assets/stocks/' + data.seventh2.char3 + '.png')
+                let stock7th23Img = new Image()
+                stock7th23Img.src = stock7th23.default
+                stock7th23Img.onload = function () {
+                    ctx.drawImage(stock7th23Img, 504, 750, 40, 42);
+                }
+
+            }
+            if (data.seventh2.char4 != "") {
+                const stock7th24 = require('../assets/stocks/' + data.seventh2.char4 + '.png')
+                let stock7th24Img = new Image()
+                stock7th24Img.src = stock7th24.default
+                stock7th24Img.onload = function () {
+                    ctx.drawImage(stock7th24Img, 461, 750, 40, 42);
+                }
+
+            }
+
+            //flag
+            const flag7th2 = require('../assets/flags/' + data.seventh2.country + '.png')
+            let flag7th2Img = new Image()
+            flag7th2Img.src = flag7th2.default
+            flag7th2Img.onload = function () {
+                ctx.drawImage(flag7th2Img, 104, 748);
+            }
+
+
+            //Labels
+            ctx.font = '21px "Bebas Neue"'
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fillText(data.date, 33, 842);
+            ctx.fillText(`${data.entrants} Entrants`, 297, 842);
+            ctx.fillText(data.tournament, 648 - ctx.measureText(data.tournament).width, 842);
+
+
 
         }
 
