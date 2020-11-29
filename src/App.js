@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import First from './components/1stPlace';
 import Row from './components/OtherPlacings';
 import Canvas from './components/Canvas';
+import example from './assets/eubc_imgs/example.png'
 
 class App extends React.Component {
   constructor(props) {
@@ -132,7 +133,7 @@ class App extends React.Component {
             this.state.clicked ?
               <Canvas id="canvas" data={this.state} />
               :
-              <div class="empty"></div>
+              <div class=""> <p>How it works:</p> <img src={example} width="680"></img></div>
           }
         </div>
         

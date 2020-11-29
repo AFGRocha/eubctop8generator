@@ -564,8 +564,6 @@ class Canvas extends React.Component {
         return (
             <div>
                 <canvas ref="canvas" width={680} height={849} />
-                <br />
-                <a href={this.state.link} onClick={this.onSubmit.bind(this)}>If you cant right click and save, click here</a>
             </div>
 
 
