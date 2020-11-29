@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/eubctop8generator/static/css/main.84ac8823.chunk.css",
+    "main.js": "/eubctop8generator/static/js/main.f89b8248.chunk.js",
+    "main.js.map": "/eubctop8generator/static/js/main.f89b8248.chunk.js.map",
+    "runtime-main.js": "/eubctop8generator/static/js/runtime-main.4eff1706.js",
+    "runtime-main.js.map": "/eubctop8generator/static/js/runtime-main.4eff1706.js.map",
+    "static/js/2.da71db74.chunk.js": "/eubctop8generator/static/js/2.da71db74.chunk.js",
+    "static/js/2.da71db74.chunk.js.map": "/eubctop8generator/static/js/2.da71db74.chunk.js.map",
+    "static/js/3.986516ff.chunk.js": "/eubctop8generator/static/js/3.986516ff.chunk.js",
+    "static/js/3.986516ff.chunk.js.map": "/eubctop8generator/static/js/3.986516ff.chunk.js.map",
+    "index.html": "/eubctop8generator/index.html",
+    "static/css/main.84ac8823.chunk.css.map": "/eubctop8generator/static/css/main.84ac8823.chunk.css.map",
+    "static/js/2.da71db74.chunk.js.LICENSE.txt": "/eubctop8generator/static/js/2.da71db74.chunk.js.LICENSE.txt",
+    "static/media/1st.d2a99557.png": "/eubctop8generator/static/media/1st.d2a99557.png",
+    "static/media/App.css": "/eubctop8generator/static/media/Gobold Bold Italic.7c085a7f.otf",
+    "static/media/background.068380c3.png": "/eubctop8generator/static/media/background.068380c3.png",
+    "static/media/example.d68ea9b7.png": "/eubctop8generator/static/media/example.d68ea9b7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4eff1706.js",
+    "static/js/2.da71db74.chunk.js",
+    "static/css/main.84ac8823.chunk.css",
+    "static/js/main.f89b8248.chunk.js"
+  ]
+}
